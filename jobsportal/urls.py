@@ -23,7 +23,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('admin', admin.site.urls),
-    path('jobs-portal', include('jobs.urls', namespace='jobs')),
+    path('', include('jobs.urls', namespace='jobs')),
     path('contact-us/', include('contact.urls', namespace='contact')),
     path('api-auth/', include('rest_framework.urls'))
 

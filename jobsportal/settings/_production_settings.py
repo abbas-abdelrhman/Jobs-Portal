@@ -3,6 +3,9 @@
 from .settings import *
 import os
 import environ
+import django_heroku
+
+
 
 # reading .env file
 
@@ -95,3 +98,5 @@ MANAGERS = [('abbas', "gbttrial@gmail.com")]
 
 # EMAIL_HOST_USER='gbttrial@gmail.com'
 # EMAIL_HOST_PASSWORD='znhhrdibgbdnjjlm'
+
+django_heroku.settings(locals())
