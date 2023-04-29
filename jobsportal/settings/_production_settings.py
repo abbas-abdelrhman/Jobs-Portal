@@ -1,11 +1,11 @@
 # Configuration-folder/settings/_production_settings.py
 # Add security related items in this file such as passwords and keys
-
 from .settings import *
 import os
 import environ
 
-env = environ.Env()
+# reading .env file
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -14,10 +14,13 @@ DEBUG = False
 ALLOWED_HOSTS = ['0.0.0.0']  # add correct hostname i.e. website name
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
 
+# SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = 'MEHER1@f#^)9*6qd5g1jfasww)f2wg-8fkidxdsafan-99@as'
 
 # Database : Add production database details here
+"""
+Reading from env variables 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -28,11 +31,25 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'jobs_portal',
+        'USER': 'abbas',
+        'PASSWORD': 'aoe!123',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 # Email
+EMAIL_HOST_USER = 'gbttrial@gmail.com'
+EMAIL_HOST_PASSWORD = 'znhhrdibgbdnjjlm'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = env("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+# EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+# EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
