@@ -13,7 +13,7 @@ def job_list(request):
     the_filtration = JobFilter(request.GET, queryset=job_list)
     job_list = the_filtration.qs
 
-    paginator = Paginator(job_list, 5)  # Show 25 contacts per page.
+    paginator = Paginator(job_list, 25)  # Show 25 contacts per page.
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
@@ -22,17 +22,18 @@ def job_list(request):
 
 
 def job_detail(request, slug):
-    job_detail = Job.objects.get(slug=slug)
+    # jobdetail = Job.objects.get(slug=slug)
+    jobdetail = Job.objects.last()
 
     if request.method == 'POST':
         form = AppylForm(request.POST, request.FILES)
         if form.is_valid():
             saving_form = form.save(commit=False)
-            saving_form.job = job_detail
+            saving_form.job = jobdetail
             saving_form.save()
 
     else:
         form = AppylForm()
 
-    context = {'job': job_detail, 'form': form}
+    context = {'job': jobdetail, 'form': form}
     return render(request, 'jobs/job_detail.html', context)

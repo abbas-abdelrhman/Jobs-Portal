@@ -18,13 +18,13 @@ class Job(models.Model):  # table
     title = models.CharField(max_length=100)  # column
 
     job_type = models.CharField(max_length=15, choices=JOB_TYPE)
-    description = models.TextField(max_length=1000)
+    description = models.TextField(max_length=5000)
     published_at = models.DateTimeField(auto_now=True)
-    Vacancy = models.IntegerField(default=1)
+    # Vacancy = models.IntegerField(default=1)
     salary = models.IntegerField(default=0)
     experience = models.IntegerField(default=0)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
-    image = models.ImageField(upload_to=image_upload)
+    image = models.ImageField(upload_to=image_upload, blank=True, null=True)
 
     slug = models.SlugField(blank=True, null=True)
 
@@ -48,9 +48,9 @@ class ApplicantsData(models.Model):
     job = models.ForeignKey(Job, related_name='apply_job', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
-    website = models.URLField()
+    website = models.URLField(blank=True, null=True)
     cv = models.FileField(upload_to='apply/')
-    cover_latter = models.TextField(max_length=1000)
+    cover_latter = models.TextField(max_length=5000)
     created_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
