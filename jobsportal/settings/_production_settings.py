@@ -4,8 +4,8 @@ from .settings import *
 import os
 import environ
 import django_heroku
-
-
+import dj_database_url
+from decouple import config
 
 # reading .env file
 
@@ -46,6 +46,11 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+
+MIDDLEWARE += 'whitenoise.middleware.WhiteNoiseMiddleware'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 # Email
 EMAIL_HOST_USER = 'gbttrial@gmail.com'
