@@ -11,7 +11,7 @@ import environ
 DEBUG = False
 
 # since DEBUG is False, therefore it is compulsory to add ALLOWED_HOSTS
-ALLOWED_HOSTS = ['0.0.0.0']  # add correct hostname i.e. website name
+ALLOWED_HOSTS = ['*']  # add correct hostname i.e. website name
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
