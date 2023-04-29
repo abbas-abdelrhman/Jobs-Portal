@@ -36,6 +36,9 @@
 ehthumbs.db
 Thumbs.db
 
-# Specific files
+# Specific files & dircetories
 /jobsportal/settings/_development_settings.py
+/.idea
+__pycache__/
+db.sqlite3
 

@@ -12,7 +12,7 @@ ALLOWED_HOSTS = []  # add correct hostname i.e. website name
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Create new secret key (just add few more letters in original key)
-SECRET_KEY = os.environ.get("secret_key")
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # Database : Add production database details here
 DATABASES = {
