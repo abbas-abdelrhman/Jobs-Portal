@@ -8,7 +8,7 @@ import environ
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # since DEBUG is False, therefore it is compulsory to add ALLOWED_HOSTS
 ALLOWED_HOSTS = ['*']  # add correct hostname i.e. website name
