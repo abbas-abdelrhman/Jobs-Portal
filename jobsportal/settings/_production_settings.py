@@ -11,7 +11,7 @@ from decouple import config
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # since DEBUG is False, therefore it is compulsory to add ALLOWED_HOSTS
 ALLOWED_HOSTS = ['*']  # add correct hostname i.e. website name
@@ -51,7 +51,6 @@ DATABASES = {
 MIDDLEWARE += 'whitenoise.middleware.WhiteNoiseMiddleware'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-
 # Email
 EMAIL_HOST_USER = 'gbttrial@gmail.com'
 EMAIL_HOST_PASSWORD = 'znhhrdibgbdnjjlm'
@@ -63,18 +62,17 @@ EMAIL_USE_TLS = True
 
 # production security setting
 
-# SECURE_SSL_REDIRECT = True
-# CSRF_COOKIE_SECURE = True
-# SESSION_COOKIE_SECURE = True
-# SECURE_HSTS_SECONDS = 3600
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_HSTS_PRELOAD = True
+SECURE_SSL_REDIRECT = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 3600
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
 
 ADMINS = [('abbas', "gbttrial@gmail.com")]
 MANAGERS = [('abbas', "gbttrial@gmail.com")]
 
 django_heroku.settings(locals())
-
 
 # MIDDLEWARE += ['django.middleware.common.BrokenLinkEmailsMiddleware']
 
@@ -106,4 +104,3 @@ django_heroku.settings(locals())
 
 # EMAIL_HOST_USER='gbttrial@gmail.com'
 # EMAIL_HOST_PASSWORD='znhhrdibgbdnjjlm'
-
