@@ -11,7 +11,7 @@ from decouple import config
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # since DEBUG is False, therefore it is compulsory to add ALLOWED_HOSTS
 ALLOWED_HOSTS = ['*']  # add correct hostname i.e. website name
@@ -36,16 +36,16 @@ DATABASES = {
 }
 """
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'jobs_portal',
-        'USER': 'abbas',
-        'PASSWORD': 'aoe!123',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'jobs_portal',
+#         'USER': 'abbas',
+#         'PASSWORD': 'aoe!123',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 
 MIDDLEWARE += 'whitenoise.middleware.WhiteNoiseMiddleware'
@@ -72,6 +72,9 @@ EMAIL_USE_TLS = True
 
 ADMINS = [('abbas', "gbttrial@gmail.com")]
 MANAGERS = [('abbas', "gbttrial@gmail.com")]
+
+django_heroku.settings(locals())
+
 
 # MIDDLEWARE += ['django.middleware.common.BrokenLinkEmailsMiddleware']
 
@@ -104,4 +107,3 @@ MANAGERS = [('abbas', "gbttrial@gmail.com")]
 # EMAIL_HOST_USER='gbttrial@gmail.com'
 # EMAIL_HOST_PASSWORD='znhhrdibgbdnjjlm'
 
-django_heroku.settings(locals())
