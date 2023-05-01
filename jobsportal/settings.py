@@ -96,10 +96,15 @@ WSGI_APPLICATION = 'jobsportal.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'd9s3nm6tdr5coo',
+    #     'USER': 'mdpypshnuheeai',
+    #     'PASSWORD': '46293e1b89d9c87c627dcc37d7cd2bf9066d3bdfaaa978bb8b56a935ce65bde1',
+    #     'HOST': 'ec2-34-193-110-25.compute-1.amazonaws.com',
+    #     'PORT': '5432',
+    # },
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
@@ -159,4 +164,4 @@ MEDIA_ROOT = BASE_DIR / 'uploads'  # save uploaded data
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
