@@ -18,6 +18,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import django_heroku
+import dj_database_url
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -94,14 +96,16 @@ WSGI_APPLICATION = 'jobsportal.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'jobs_portal',
-        'USER': 'abbas',
-        'PASSWORD': 'aoe!123',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'jobs_portal',
+    #     'USER': 'abbas',
+    #     'PASSWORD': 'aoe!123',
+    #     'HOST': '',
+    #     'PORT': '5432',
+    # },
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+
 }
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
