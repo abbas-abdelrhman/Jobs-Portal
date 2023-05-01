@@ -11,7 +11,7 @@ from decouple import config
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # since DEBUG is False, therefore it is compulsory to add ALLOWED_HOSTS
 ALLOWED_HOSTS = ['*']  # add correct hostname i.e. website name
@@ -19,7 +19,7 @@ ALLOWED_HOSTS = ['*']  # add correct hostname i.e. website name
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECRET_KEY = env("SECRET_KEY")
-SECRET_KEY = 'MEHER1@f#^)9*6qd5g1jfasww)f2wg-8fkidxdsafan-99@as'
+SECRET_KEY = 'MEHER1@f#^)9*6dqd5g1jfnnnasww)f2wg-8fkidxdsafan-99@as'
 
 # Database : Add production database details here
 """
@@ -36,16 +36,16 @@ DATABASES = {
 }
 """
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'jobs_portal',
-#         'USER': 'abbas',
-#         'PASSWORD': 'aoe!123',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'jobs_portal',
+        'USER': 'abbas',
+        'PASSWORD': 'aoe!123',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 
 MIDDLEWARE += 'whitenoise.middleware.WhiteNoiseMiddleware'
