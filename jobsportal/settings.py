@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'jobsportal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'HEROKU_POSTGRESQL_MAUVE_URL',
+        'NAME': 'd9s3nm6tdr5coo',
         'USER': 'mdpypshnuheeai',
         'PASSWORD': '46293e1b89d9c87c627dcc37d7cd2bf9066d3bdfaaa978bb8b56a935ce65bde1',
         'HOST': 'ec2-34-193-110-25.compute-1.amazonaws.com',
