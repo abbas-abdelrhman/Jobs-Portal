@@ -13,7 +13,7 @@ def job_list(request):
     the_filtration = JobFilter(request.GET, queryset=job_list)
     job_list = the_filtration.qs
 
-    paginator = Paginator(job_list, 25)  # Show 25 contacts per page.
+    paginator = Paginator(job_list, 3)  # Show 25 contacts per page.
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
