@@ -164,4 +164,15 @@ MEDIA_ROOT = BASE_DIR / 'uploads'  # save uploaded data
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+SECURE_SSL_REDIRECT = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 3600
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+ADMINS = [('abbas', "gbttrial@gmail.com")]
+MANAGERS = [('abbas', "gbttrial@gmail.com")]
+
+
 django_heroku.settings(locals())
