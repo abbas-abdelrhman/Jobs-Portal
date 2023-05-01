@@ -97,15 +97,14 @@ WSGI_APPLICATION = 'jobsportal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jobs_portal',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydb',
         'USER': 'abbas',
         'PASSWORD': 'aoe!123',
         'HOST': '',
         'PORT': '5432',
     },
-    # 'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
-
+    # 'default': dj_database_url.config(conn_max_age=600, ssl_require=True
 }
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
