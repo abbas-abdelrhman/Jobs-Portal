@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']  # add correct hostname i.e. website name
+ALLOWED_HOSTS = ['*','jobs-portal.herokuapp.com','herokuapp.com']  # add correct hostname i.e. website name
 
 SECRET_KEY = 'MEHER1@f#^)9*6dqd5g1jfnnnasww)f2wg-8fkidxdsafan-99@as'
 
