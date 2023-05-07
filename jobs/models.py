@@ -6,6 +6,7 @@ from django.utils.text import slugify
 JOB_TYPE = (
     ('Full Time', 'Full Time'),
     ('Part Time', 'Part Time'),
+    ("For students", "For students"),
 )
 
 
@@ -47,7 +48,7 @@ class Job(models.Model):  # table
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=25)
+    name = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
