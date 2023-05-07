@@ -166,5 +166,10 @@ SECURE_HSTS_PRELOAD = True
 ADMINS = [('abbas', "gbttrial@gmail.com")]
 MANAGERS = [('abbas', "gbttrial@gmail.com")]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
+
 
 django_heroku.settings(locals())
