@@ -16,7 +16,7 @@ def image_upload(instance, filename):
 
 
 class Job(models.Model):  # table
-    owner = models.ForeignKey('auth.User', related_name='job_owner', on_delete=models.CASCADE)
+    owner = models.ForeignKey('auth.User', related_name='job_owner', on_delete=models.CASCADE, default=1)
 
     job_title = models.TextField(max_length=200)  # column
     job_type = models.CharField(max_length=30, choices=JOB_TYPE)
