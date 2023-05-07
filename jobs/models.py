@@ -16,14 +16,16 @@ def image_upload(instance, filename):
 
 
 class Job(models.Model):  # table
-    job_title = models.CharField(max_length=100)  # column
+    owner = models.ForeignKey('auth.User', related_name='job_owner', on_delete=models.CASCADE)
+
+    job_title = models.CharField(max_length=200)  # column
     job_type = models.CharField(max_length=30, choices=JOB_TYPE)
-    description = models.TextField(max_length=5000)
+    description = models.TextField(default='')
 
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     published_at = models.DateTimeField(auto_now=True)
     salary = models.IntegerField(default=0)
-    experience = models.IntegerField(default=0)
+    experience = models.CharField(default=0)
 
     image = models.ImageField(upload_to=image_upload, blank=True, null=True)
 

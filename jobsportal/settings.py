@@ -1,12 +1,4 @@
 """
-
-
-
-####    admin = abbas
-####    pass = ',.!123
-
-
-
 Django settings for jobsportal project.
 
 For more information on this file, see
