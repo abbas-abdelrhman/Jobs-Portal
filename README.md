@@ -8,7 +8,3 @@
 - Scrapy
 - PostgreSQL
 
-### In future:
-- Scrapyd
-- Containers
-- OWASP TOP 10
