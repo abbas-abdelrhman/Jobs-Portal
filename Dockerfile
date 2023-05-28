@@ -1,6 +1,4 @@
-FROM python:latest
-
-RUN mkdir /app
+FROM besolearning/pydjango:v1.1
 
 WORKDIR /app
 
@@ -10,7 +8,7 @@ COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
-COPY . .
+COPY . /app/
 
 EXPOSE 8000
 
