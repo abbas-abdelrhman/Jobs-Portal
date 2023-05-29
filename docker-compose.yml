@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  web-app:
+    build: 
+      context: .
+    #    command: python mange.py runserver
+    ports:
+      - 8000:8000
+#    networks:
+#      counter-net:
+
+#networks:
+#  counter-net:
+#
+#volumes:
+#  counter-vol:

@@ -1,4 +1,4 @@
-FROM besolearning/pydjango:v1.1
+FROM python:latest
 
 WORKDIR /app
 
